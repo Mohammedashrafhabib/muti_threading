@@ -18,7 +18,11 @@ namespace ConsoleApp3
             while (true)
             {
                 semaphores[(int)id - 1].WaitOne();
+
                 file.WriteLine($"thread {(int)id}:"+DateTime.Now.ToString());
+
+                file.WriteLine(DateTime.Now.ToString());
+
                 file.Flush();
                 semaphores[(int)id - 1].Release();
                 Thread.Sleep(time);
